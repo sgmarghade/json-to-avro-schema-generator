@@ -113,7 +113,7 @@ public class AvroConverter {
                         fields.add(objectNode);
                     } else {
                         objectNode.set(TYPE, mapper.createObjectNode().put(TYPE, ARRAY).set(ITEMS, mapper.createObjectNode()
-                                .put(NAME, RECORD).put(NAME, generateRandomNumber(map)).set(FIELDS, getFields(element))));
+                                .put(TYPE, RECORD).put(NAME, generateRandomNumber(map)).set(FIELDS, getFields(element))));
                     }
                     fields.add(objectNode);
                     break;
