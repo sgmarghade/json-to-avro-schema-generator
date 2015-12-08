@@ -48,4 +48,11 @@ public class AcroConverterTest {
         converter.convert(jsonNode.toString());
     }
 
+    @Test
+    public void generatedSchemaShouldVerifyInputJson() throws IOException {
+        String schema = converter.convert(TestHelper.getJson());
+        Assert.assertEquals(true, converter.validate(schema,TestHelper.getJson()));
+
+    }
+
 }
