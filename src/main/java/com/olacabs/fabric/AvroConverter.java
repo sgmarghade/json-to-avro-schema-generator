@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * @author swapnil.marghade on 07/12/15.
@@ -139,6 +140,6 @@ public class AvroConverter {
      * @return random
      */
     private String generateRandomNumber(Map.Entry<String, JsonNode> map) {
-        return (map.getKey() + "_" + (int) (Math.random() * 100));
+        return (map.getKey() + "_" + new Random().nextInt(100));
     }
 }
