@@ -1,3 +1,10 @@
+General purpose AVRO schema generator from JSON schema.
+Supported data types are
+- NUMBER
+- STRING
+- ARRAY
+- OBJECT
+
 # Usage
 - git clone
 - mvn clean install
