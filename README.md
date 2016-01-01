@@ -1,5 +1,6 @@
 General purpose AVRO schema generator from JSON schema.
 Supported data types are
+
 - NUMBER
 - STRING
 - ARRAY
@@ -18,9 +19,9 @@ Supported data types are
                                                                                                                   	}
                                                                                                                   }'
 
-- output :-
+- #### output :-
 
-- ```{
+- > {
   "namespace" : "com.sgmarghade.test",
   "name" : "outer_record",
   "type" : "record",
