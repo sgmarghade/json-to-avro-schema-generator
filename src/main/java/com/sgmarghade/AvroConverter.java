@@ -1,4 +1,4 @@
-package com.olacabs.fabric;
+package com.sgmarghade;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * @author swapnil.marghade on 07/12/15.
@@ -70,7 +71,7 @@ public class AvroConverter {
     public String convert(final String json) throws IOException {
         final JsonNode jsonNode = mapper.readTree(json);
         final ObjectNode finalSchema = mapper.createObjectNode();
-        finalSchema.put("namespace", "com.olacabs.fabric");
+        finalSchema.put("namespace", "com.sgmarghade.test");
         finalSchema.put(NAME, "outer_record");
         finalSchema.put(TYPE, RECORD);
         finalSchema.set(FIELDS, getFields(jsonNode));
@@ -139,6 +140,6 @@ public class AvroConverter {
      * @return random
      */
     private String generateRandomNumber(Map.Entry<String, JsonNode> map) {
-        return (map.getKey() + "_" + (int) (Math.random() * 100));
+        return (map.getKey() + "_" + new Random().nextInt(100));
     }
 }

@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.olacabs.fabric</groupId>
+    <groupId>com.sgmarghade</groupId>
     <artifactId>avro-schema-generator</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -12,13 +12,14 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.1</version>
+            <version>4.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -42,19 +43,38 @@
             <version>2.5.0</version>
         </dependency>
     </dependencies>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <instrumentation>
+                        <ignoreTrivial>true</ignoreTrivial>
+                    </instrumentation>
+                    <check />
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>3.0.1</version>
+                <configuration>
+                    <failOnError>false</failOnError>
+                    <effort>Max</effort>
+                    <!-- Reports all bugs (other values are medium and max) -->
+                    <threshold>Low</threshold>
+                    <!-- Produces XML report -->
+                    <xmlOutput>true</xmlOutput>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+
     <build>
     <plugins>
-    <!--<plugin>-->
-    <!--<artifactId>maven-dependency-plugin</artifactId>-->
-    <!--<executions>-->
-    <!--<execution>-->
-    <!--<phase>compile</phase>-->
-    <!--<goals>-->
-    <!--<goal>copy-dependencies</goal>-->
-    <!--</goals>-->
-    <!--</execution>-->
-    <!--</executions>-->
-    <!--</plugin>-->
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -95,7 +115,7 @@
                                 implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                         <transformer
                                 implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                            <mainClass>com.olacabs.fabric.App</mainClass>
+                            <mainClass>com.sgmarghade.App</mainClass>
                         </transformer>
                     </transformers>
                 </configuration>
