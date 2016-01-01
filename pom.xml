@@ -2,35 +2,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.olacabs.fabric</groupId>
+    <groupId>com.sgmarghade</groupId>
     <artifactId>avro-schema-generator</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>avro-schema-generator</name>
     <url>http://maven.apache.org</url>
-
-    <parent>
-        <groupId>com.olacabs</groupId>
-        <artifactId>ola-libs-master-pom</artifactId>
-        <version>0.0.5</version>
-    </parent>
-
-    <repositories>
-        <repository>
-            <id>releases</id>
-            <name>Releases</name>
-            <url>http://artifactory.corp.olacabs.com:8080/artifactory/libs-release-local</url>
-        </repository>
-    </repositories>
-
-    <scm>
-        <connection>scm:git:ssh://git@gitlab.corp.olacabs.com:2222/dataplatform/avro-schema-generator.git</connection>
-        <url>scm:git:ssh://git@gitlab.corp.olacabs.com:2222/dataplatform/avro-schema-generator.git</url>
-        <developerConnection>scm:git:https://gitlab.corp.olacabs.com/dataplatform/avro-schema-generator.git
-        </developerConnection>
-        <tag>HEAD</tag>
-    </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -137,7 +115,7 @@
                                 implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                         <transformer
                                 implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                            <mainClass>com.olacabs.fabric.App</mainClass>
+                            <mainClass>com.sgmarghade.App</mainClass>
                         </transformer>
                     </transformers>
                 </configuration>

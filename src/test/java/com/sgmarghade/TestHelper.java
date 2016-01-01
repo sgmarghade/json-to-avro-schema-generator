@@ -1,4 +1,4 @@
-package com.olacabs.fabric;
+package com.sgmarghade;
 
 /**
  * @author swapnil.marghade on 07/12/15.
@@ -9,7 +9,7 @@ public class TestHelper {
                 "\t\"deviceDna\": {\n" +
                 "\n" +
                 "\t\t\"OS\": \"windows\",\n" +
-                "\t\t\"AppType\": \"olacabs\",\n" +
+                "\t\t\"AppType\": \"sgmarghade\",\n" +
                 "\t\t\"installID\": \"GHRT345GHYT\",\n" +
                 "\t\t\"signals\": {\n" +
                 "\t\t\t\"DeviceId\": \"Gm9mCkLOtpIsPRbvs2CDZedt4Bw=3D\",\n" +

@@ -1,4 +1,4 @@
-package com.olacabs.fabric;
+package com.sgmarghade;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -71,7 +71,7 @@ public class AvroConverter {
     public String convert(final String json) throws IOException {
         final JsonNode jsonNode = mapper.readTree(json);
         final ObjectNode finalSchema = mapper.createObjectNode();
-        finalSchema.put("namespace", "com.olacabs.fabric");
+        finalSchema.put("namespace", "com.sgmarghade.fabric");
         finalSchema.put(NAME, "outer_record");
         finalSchema.put(TYPE, RECORD);
         finalSchema.set(FIELDS, getFields(jsonNode));

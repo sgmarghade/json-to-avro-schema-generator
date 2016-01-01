@@ -1,4 +1,4 @@
-package com.olacabs.fabric;
+package com.sgmarghade;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -35,13 +35,13 @@ public class App {
 //                "\t\t\t\t\t\"client\": \"android\",\n" +
 //                "\t\t\t\t\t\"api_key\": \"@ndro1d\",\n" +
 //                "\t\t\t\t\t\"app_version\": \"3.3.11\",\n" +
-//                "\t\t\t\t\t\"User_Agent\": \"OlaConsumerApp/3.3.11 (android/4.4.2)\",\n" +
+//                "\t\t\t\t\t\"User_Agent\": \"sgmarghadeConsumerApp/3.3.11 (android/4.4.2)\",\n" +
 //                "\t\t\t\t\t\"X_REQUEST_ID\": \"aabWiXEkVCvifya404oXnUBwSXQ=\\n\"\n" +
 //                "\t\t\t\t},\n" +
 //                "\t\t\t\t\"paramSize\": 190,\n" +
 //                "\t\t\t\t\"params\": \"{\\\"lng\\\":\\\"77.61506000000008\\\",\\\"user_id\\\":\\\"MYLYC4xSzZpbve0CmFhLOVmNiGUnaynlvZj150qaNO/KK9NbbZeXopdTahS1\\\\nLYzQf1OLsQf2jdItf0g71iUKzg\\\\u003d\\\\u003d\\\\n    \\\",\\\"ab_variant\\\":\\\"B\\\",\\\"lat\\\":\\\"12.93506\\\",\\\"version\\\":\\\"3.3.11\\\"}\",\n" +
 //                "\t\t\t\t\"type\": \"GET\",\n" +
-//                "\t\t\t\t\"url\": \"https://apps.olacabs.com/v3/cab/city_wise_fare_breakup_with_surcharge?lng=77.61506000000008&user_id=MYLYC4xSzZpbve0CmFhLOVmNiGUnaynlvZj150qaNO%2FKK9NbbZeXopdTahS1%0ALYzQf1OLsQf2jdItf0g71iUKzg%3D%3D%0A%20%20%20%20&ab_variant=B&lat=12.93506&version=3.3.11\"\n" +
+//                "\t\t\t\t\"url\": \"https://apps.sgmarghade.com/v3/cab/city_wise_fare_breakup_with_surcharge?lng=77.61506000000008&user_id=MYLYC4xSzZpbve0CmFhLOVmNiGUnaynlvZj150qaNO%2FKK9NbbZeXopdTahS1%0ALYzQf1OLsQf2jdItf0g71iUKzg%3D%3D%0A%20%20%20%20&ab_variant=B&lat=12.93506&version=3.3.11\"\n" +
 //                "\t\t\t},\n" +
 //                "\t\t\t\"eventType\": \"networkInfo\",\n" +
 //                "\t\t\t\"elapsedTime\": 8940\n" +
@@ -66,13 +66,13 @@ public class App {
 //                "\t\t\t\t\t\"client\": \"android\",\n" +
 //                "\t\t\t\t\t\"api_key\": \"@ndro1d\",\n" +
 //                "\t\t\t\t\t\"app_version\": \"3.3.11\",\n" +
-//                "\t\t\t\t\t\"User_Agent\": \"OlaConsumerApp/3.3.11 (android/4.4.2)\",\n" +
+//                "\t\t\t\t\t\"User_Agent\": \"sgmarghadeConsumerApp/3.3.11 (android/4.4.2)\",\n" +
 //                "\t\t\t\t\t\"X_REQUEST_ID\": \"aabWiXEkVCvifya404oXnUBwSXQ=\\n\"\n" +
 //                "\t\t\t\t},\n" +
 //                "\t\t\t\t\"paramSize\": 190,\n" +
 //                "\t\t\t\t\"params\": \"{\\\"lng\\\":\\\"77.61506000000008\\\",\\\"user_id\\\":\\\"MYLYC4xSzZpbve0CmFhLOVmNiGUnaynlvZj150qaNO/KK9NbbZeXopdTahS1\\\\nLYzQf1OLsQf2jdItf0g71iUKzg\\\\u003d\\\\u003d\\\\n    \\\",\\\"ab_variant\\\":\\\"B\\\",\\\"lat\\\":\\\"12.93506\\\",\\\"version\\\":\\\"3.3.11\\\"}\",\n" +
 //                "\t\t\t\t\"type\": \"GET\",\n" +
-//                "\t\t\t\t\"url\": \"https://apps.olacabs.com/v3/cab/city_wise_fare_breakup_with_surcharge?lng=77.61506000000008&user_id=MYLYC4xSzZpbve0CmFhLOVmNiGUnaynlvZj150qaNO%2FKK9NbbZeXopdTahS1%0ALYzQf1OLsQf2jdItf0g71iUKzg%3D%3D%0A%20%20%20%20&ab_variant=B&lat=12.93506&version=3.3.11\"\n" +
+//                "\t\t\t\t\"url\": \"https://apps.sgmarghade.com/v3/cab/city_wise_fare_breakup_with_surcharge?lng=77.61506000000008&user_id=MYLYC4xSzZpbve0CmFhLOVmNiGUnaynlvZj150qaNO%2FKK9NbbZeXopdTahS1%0ALYzQf1OLsQf2jdItf0g71iUKzg%3D%3D%0A%20%20%20%20&ab_variant=B&lat=12.93506&version=3.3.11\"\n" +
 //                "\t\t\t},\n" +
 //                "\t\t\t\"eventType\": \"networkInfo\",\n" +
 //                "\t\t\t\"elapsedTime\": 8940\n" +
@@ -81,7 +81,7 @@ public class App {
 //                "}";
 //
 //        String schema = "{\n" +
-//                "  \"namespace\" : \"com.olacabs.fabric\",\n" +
+//                "  \"namespace\" : \"com.sgmarghade.fabric\",\n" +
 //                "  \"name\" : \"outer_record\",\n" +
 //                "  \"type\" : \"record\",\n" +
 //                "  \"fields\" : [ {\n" +
@@ -195,7 +195,7 @@ public class App {
 //                "}";
 
 
-//        new AvroConverter(new ObjectMapper()).validate(schema, actual1);
+//        new AvroConverter(new Obje`ctMapper()).validate(schema, actual1);
         System.out.println( new AvroConverter(new ObjectMapper()).convert(args[0]));
     }
 
