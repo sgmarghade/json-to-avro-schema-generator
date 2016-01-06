@@ -12,12 +12,13 @@ Supported data types are
 
 ### Command line usage :-
 
-- java -jar target/avro-schema-generator-1.0-SNAPSHOT.jar 'java -jar target/avro-schema-generator-1.0-SNAPSHOT.jar '{
-                                                                                                                  	"key1": 2.2,
-                                                                                                                  	"key2": {
-                                                                                                                  		"key3": "string"
-                                                                                                                  	}
-                                                                                                                  }'
+- java -jar target/avro-schema-generator-1.0-SNAPSHOT.jar 
+'{
+  "key1": 2.2,
+  "key2": {
+  	"key3": "string"
+  }
+}'
 
 - #### output :-
 
