@@ -28,7 +28,7 @@ public class AcroConverterTest {
     @Test
     public void validSchemShouldHaveValidNameSpaceNameAndRecord() throws IOException {
         JsonNode jsonNode = mapper.readTree(converter.convert(TestHelper.getJson()));
-        Assert.assertEquals("com.sgmarghade.fabric",jsonNode.at("/namespace").asText());
+        Assert.assertEquals("com.sgmarghade.test",jsonNode.at("/namespace").asText());
         Assert.assertEquals("outer_record",jsonNode.at("/name").asText());
         Assert.assertEquals("record",jsonNode.at("/type").asText());
     }
