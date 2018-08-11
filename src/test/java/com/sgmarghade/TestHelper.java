@@ -97,4 +97,16 @@ public class TestHelper {
                 "\t}\n" +
                 "}";
     }
+
+    public static String getJsonWithNullField() {
+        return "{\"fieldThatsNull\":null}";
+    }
+
+    public static String getJsonWithBooleanField() {
+        return "{\"fieldThatsBoolean\":false}";
+    }
+
+    public static String getJsonWithEmptyArray() {
+        return "{\"emptyArray\":[]}";
+    }
 }

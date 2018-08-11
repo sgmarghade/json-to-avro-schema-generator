@@ -41,11 +41,32 @@ public class AcroConverterTest {
         Assert.assertEquals("record",arrayNode.get(0).at("/type/type").asText());
     }
 
+    @Test
+    public void jsonWithNullValue() throws IOException {
+        String schema = converter.convert(TestHelper.getJsonWithNullField());
+        Assert.assertEquals(true, converter.validate(schema,TestHelper.getJsonWithNullField()));
+
+        final JsonNode schemaTree = mapper.readTree(schema);
+        final ArrayNode fields = (ArrayNode) schemaTree.at("/fields");
+        Assert.assertEquals("fieldThatsNull",fields.get(0).at("/name").asText());
+        Assert.assertEquals(true,fields.get(0).at("/type").isArray());
+        Assert.assertEquals("null",fields.get(0).at("/type/0").asText());
+    }
+
+    @Test
+    public void jsonWithBooleanValue() throws IOException {
+        String schema = converter.convert(TestHelper.getJsonWithBooleanField());
+        Assert.assertEquals(true, converter.validate(schema,TestHelper.getJsonWithBooleanField()));
+
+        final JsonNode schemaTree = mapper.readTree(schema);
+        final ArrayNode fields = (ArrayNode) schemaTree.at("/fields");
+        Assert.assertEquals("fieldThatsBoolean",fields.get(0).at("/name").asText());
+        Assert.assertEquals("boolean",fields.get(0).at("/type").asText());
+    }
+
     @Test(expected = RuntimeException.class)
-    public void invalidJsonWithNullValueShouldThrowException() throws IOException {
-        ObjectNode jsonNode = (ObjectNode) mapper.readTree(TestHelper.getJson());
-        jsonNode.set("dummyString", null);
-        converter.convert(jsonNode.toString());
+    public void jsonWithEmptyArray() throws IOException {
+        converter.convert(TestHelper.getJsonWithEmptyArray());
     }
 
     @Test

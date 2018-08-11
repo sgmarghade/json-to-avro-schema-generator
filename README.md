@@ -5,6 +5,8 @@ Supported data types are
 - STRING
 - ARRAY
 - OBJECT
+- NULL
+- BOOLEAN
 
 # Usage
 - git clone

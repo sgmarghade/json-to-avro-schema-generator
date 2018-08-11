@@ -31,6 +31,8 @@ public class AvroConverter {
     private static final String STRING = "string";
     private static final String RECORD = "record";
     private static final String FIELDS = "fields";
+    private static final String NULL = "null";
+    private static final String BOOLEAN = "boolean";
 
     private final ObjectMapper mapper;
 
@@ -106,6 +108,10 @@ public class AvroConverter {
                     final ObjectNode objectNode = mapper.createObjectNode();
                     objectNode.put(NAME, map.getKey());
 
+                    if (element == null) {
+                        throw new RuntimeException("Unable to guess at schema type for empty array");
+                    }
+
                     if (element.getNodeType() == JsonNodeType.NUMBER) {
                         objectNode.set(TYPE, mapper.createObjectNode().put(TYPE, ARRAY).put(ITEMS, (nextNode.isLong() ? "long" : "double")));
                         fields.add(objectNode);
@@ -125,6 +131,19 @@ public class AvroConverter {
                     node.put(NAME, map.getKey());
                     node.set(TYPE, mapper.createObjectNode().put(TYPE, RECORD).put(NAME, generateRandomNumber(map)).set(FIELDS, getFields(nextNode)));
                     fields.add(node);
+                    break;
+
+                case NULL:
+
+                    ObjectNode unionNullNode = mapper.createObjectNode();
+                    unionNullNode.put(NAME, map.getKey());
+                    unionNullNode.putArray(TYPE).add(NULL);
+                    fields.add(unionNullNode);
+                    break;
+
+                case BOOLEAN:
+
+                    fields.add(mapper.createObjectNode().put(NAME, map.getKey()).put(TYPE, BOOLEAN));
                     break;
 
                 default:
